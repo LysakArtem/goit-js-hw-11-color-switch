@@ -15,6 +15,20 @@ const bodyRef = document.querySelector('body');
 const buttonStartRef = document.querySelector('[data-action="start"]');
 const buttonStopRef = document.querySelector('[data-action="stop"]');
 
+let intervalId = null;
+
+const onClickStart = () => { 
+  intervalId= setInterval(changeBackground, 1000);
+  buttonStartRef.disabled = true;
+}
+
+const onClickStop = () => {
+  if(intervalId){
+    clearInterval(intervalId);
+    buttonStartRef.disabled = false;
+  }
+}
+
 buttonStartRef.addEventListener('click', onClickStart);
 buttonStopRef.addEventListener('click', onClickStop);
 
@@ -25,17 +39,7 @@ const changeBackground = () => {
   bodyRef.setAttribute('style',value);
   console.log(color);
 }
-let intervalId = null
-const onClickStart = () => { 
-  intervalId= setInterval(changeBackground,1000);
-  buttonStartRef.disabled = true;
-}
 
-const onClickStop = () => {
-  if(intervalId){
-    clearInterval(intervalId);
-    buttonStartRef.disabled =false;
-  }
-}
+
 
 
