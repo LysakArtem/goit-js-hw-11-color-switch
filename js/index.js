@@ -33,10 +33,10 @@ buttonStartRef.addEventListener('click', onClickStart);
 buttonStopRef.addEventListener('click', onClickStop);
 
 const changeBackground = () => {
-  const randomIndex=randomIntegerFromInterval(0, 5);
-  const color= colors[randomIndex];
-  let value= `background-color: ${color}`;
-  bodyRef.setAttribute('style',value);
+  const randomIndex = randomIntegerFromInterval(0, 5);
+  const color = colors[randomIndex];
+  let value = `background-color: ${color}`;
+  bodyRef.setAttribute('style', value);
   console.log(color);
 }
 
